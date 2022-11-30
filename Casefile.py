@@ -191,8 +191,6 @@ class Generator:
         preview = input("Preview file? [Y/n] > ")
         if preview in "Yy" or preview == None:
             self.mdFile.get_md_text()
-        
-
 
         self.mdFile.create_md_file()
         os.remove("%s.md.bak" % self.casenumber)
