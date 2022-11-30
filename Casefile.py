@@ -25,8 +25,7 @@ class Generator:
         self.what_we_do      = ""
         self.more_info       = ""
 
-        self.mdFile = MdUtils(file_name = casenumber
-            )
+        self.mdFile = MdUtils(file_name = casenumber)
 
     def _check_requirements(self):
         try:
