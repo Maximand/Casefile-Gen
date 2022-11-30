@@ -7,39 +7,40 @@ TODO: Keep changes to file and state?
 
 class Generator:
 
-    title           = ""
-    name            = ""
-    author          = ""
-    lead            = ""
-    excerpt         = ""
-    product         = ""
-    versions        = ""
-    recommendation  = ""
-    workaround      = ""
-    start           = ""
-    summary         = ""
-    what_you_do     = ""
-    what_we_do      = ""
-    more_info       = ""
-
     def __init__(self, casenumber):
         self.casenumber = casenumber
+
+        self.title           = ""
+        self.name            = ""
+        self.author          = ""
+        self.lead            = ""
+        self.excerpt         = ""
+        self.product         = ""
+        self.versions        = ""
+        self.recommendation  = ""
+        self.workaround      = ""
+        self.start           = ""
+        self.summary         = ""
+        self.what_you_do     = ""
+        self.what_we_do      = ""
+        self.more_info       = ""
+
         self.mdFile = MdUtils(file_name = casenumber
             )
 
     def _check_requirements(self):
         try:
-            assert title is not None,           "[!] Please provide title."
-            assert name is not None,            "[!] Please provide name."
-            assert author is not None,          "[!] Please provide author."
-            assert lead is not None,            "[!] Please provide caselead."
-            assert excerpt is not None,         "[!] Please provide author."
-            assert product is not None,         "[!] Please provide product."
-            assert recommendation is not None,  "[!] Please provide recommendation."
-            assert start is not None,           "[!] Please provide start."
-            assert summary is not None,         "[!] Please provide a summary."
-            assert what_you_do is not None,     "[!] Please provide some advice."
-            assert what_we_do is not None,      "[!] Please provide what DIVD does."
+            assert self.title is not None,           "[!] Please provide title."
+            assert self.name is not None,            "[!] Please provide name."
+            assert self.author is not None,          "[!] Please provide author."
+            assert self.lead is not None,            "[!] Please provide caselead."
+            assert self.excerpt is not None,         "[!] Please provide author."
+            assert self.product is not None,         "[!] Please provide product."
+            assert self.recommendation is not None,  "[!] Please provide recommendation."
+            assert self.start is not None,           "[!] Please provide start."
+            assert self.summary is not None,         "[!] Please provide a summary."
+            assert self.what_you_do is not None,     "[!] Please provide some advice."
+            assert self.what_we_do is not None,      "[!] Please provide what DIVD does."
         except AssertionError:
             return False
         return True
@@ -85,23 +86,23 @@ class Generator:
         return
 
     def write_title(self):
-        title = input("[*] Please provide a title > ")
+        self.title = input("[*] Please provide a title > ")
     def write_author(self):
-        author = input("[*] Please provide the author > ")
+        self.author = input("[*] Please provide the author > ")
     def write_lead(self):
-        lead = input("[*] Please provide the caselead > ")
+        self.lead = input("[*] Please provide the caselead > ")
     def write_excerpt(self):
-        excerpt = input("[*] Please provide an excerpt > ")
+        self.excerpt = input("[*] Please provide an excerpt > ")
     def write_product(self):
-        product = input("[*] Please provide the product(s) > ")
+        self.product = input("[*] Please provide the product(s) > ")
     def write_versions(self):
-        versions = input("[*] Please provide the versions > ")
+        self.versions = input("[*] Please provide the versions > ")
     def write_recommendation(self):
-        recommendation = input("[*] Please provide your recommendation > ")
+        self.recommendation = input("[*] Please provide your recommendation > ")
     def write_workaround(self):
-        workaround = input("[*] Please provide an optional workaround > ")
+        self.workaround = input("[*] Please provide an optional workaround > ")
     def write_start(self):
-        start = input("[*] When did the case start > ")
+        self.start = input("[*] When did the case start > ")
 
     # Bouw compleet bestand en check requirements
     def generate(self):
