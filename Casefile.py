@@ -125,6 +125,7 @@ class Generator:
         self.mdFile.new_line("end:")
         self.mdFile.new_line("timeline:")
         self.timeline()
+        self.mdFile.new_line("---")
 
         # Hacky hack hack
         try:
